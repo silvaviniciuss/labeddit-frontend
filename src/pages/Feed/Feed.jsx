@@ -9,6 +9,7 @@ import { FeedPageContainer, InputComment, PostButton } from "./FeedStyle"
 import { useInput } from "../../hooks/useInput"
 import { FormContainer, LineBetweenButtons } from "../Login/LoginStyle"
 import { Loading } from "../../components/Loading/Loading"
+import ToastAnimated, {showToast} from "../../components/Toast/Toast"
 
 export const Feed = () => {
     const navigate = useNavigate()
@@ -43,8 +44,7 @@ export const Feed = () => {
             loadingPostComments()
             setLoading(false)
         } catch (error) {
-            console.error(error?.response?.data);
-            window.alert(error?.response?.data)
+            showToast({type: "error", message: `${error?.response?.data}`})
         }
     }
 
@@ -85,6 +85,7 @@ export const Feed = () => {
                 })
                 }</>
             {loading && <Loading />}
+            <ToastAnimated/>
         </FeedPageContainer>
     )
 }

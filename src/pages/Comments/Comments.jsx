@@ -10,6 +10,7 @@ import { InputComment } from "../Feed/FeedStyle"
 import { useInput } from "../../hooks/useInput"
 import { ButtonGradient, FormContainer, LineBetweenButtons } from "../Login/LoginStyle"
 import { Loading } from "../../components/Loading/Loading"
+import ToastAnimated, { showToast } from "../../components/Toast/Toast"
 
 export const Comments = () => {
     const { posts, loading, setLoading , comments, loadingPostCommentsByPostId} = useContext(globalContext)
@@ -41,7 +42,7 @@ export const Comments = () => {
             loadingPostCommentsByPostId(postId)
             setLoading(false)
         } catch (error) {
-            window.alert(error?.response?.data)
+            showToast({type: "warn", message: `${error?.response?.data}`})
         }
     }   
     
@@ -75,10 +76,15 @@ export const Comments = () => {
                 <ButtonGradient>Responder</ButtonGradient>
             </FormContainer>
             <LineBetweenButtons></LineBetweenButtons>
-            {comments?.map((comment, index) => {
+            {comments?.sort((a, b)=>{
+                return new Date((b.createdAt.split(',')[0]).split('/').reverse().join('/')) - new Date((a.createdAt.split(',')[0]).split('/').reverse().join('/'))
+            })
+            
+            .map((comment, index) => {
                 return <CommentsByPostId key={index} commentPostId={comment} />
             })}
             {loading && <Loading/>}
+            <ToastAnimated/>
         </CommentPageContainer>
     )
 }

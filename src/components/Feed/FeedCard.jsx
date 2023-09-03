@@ -18,7 +18,7 @@ export const FeedCard = ({ postId, content, nickname, likes, dislikes, comment }
     const locate = useLocation()
 
     const [likeButton, setLikeButton] = useState('none')
-    const { loadingPosts, loadingPostComments,setLoading, editPost, setEditPost, setInputEdit, setIdToEdit } = useContext(globalContext)
+    const { loadingPosts, loadingPostComments, setLoading, editPost, setEditPost, setInputEdit, setIdToEdit } = useContext(globalContext)
 
     const labedditNickname = window.localStorage.getItem("labeddit_nickname")
 
@@ -27,25 +27,26 @@ export const FeedCard = ({ postId, content, nickname, likes, dislikes, comment }
     }, [])
 
     const showButton = () => {
-        if(locate.pathname === '/feed') {
+        if (locate.pathname === '/feed') {
             return nickname === labedditNickname &&
-            <>
-                <EditContainer>
-                    <EditIcon
+                <>
+                    <EditContainer
                         onClick={() => {
                             setInputEdit(content)
                             setIdToEdit(postId)
                             setEditPost(true)
                         }}
-                        src={EditImg}
-                    />
-                </EditContainer>
-                <DeleteContainer
-                    onClick={deletePost}
-                >
-                    <DeleteIcon src={DeleteImg} />
-                </DeleteContainer>
-            </>
+                    >
+                        <EditIcon
+                            src={EditImg}
+                        />
+                    </EditContainer>
+                    <DeleteContainer
+                        onClick={deletePost}
+                    >
+                        <DeleteIcon src={DeleteImg} />
+                    </DeleteContainer>
+                </>
         } else {
             <></>
         }
@@ -105,7 +106,7 @@ export const FeedCard = ({ postId, content, nickname, likes, dislikes, comment }
 
             loadingLikeDislikes(postId)
             loadingPosts()
-            
+
         } catch (error) {
             window.alert(error?.response?.data)
         }
@@ -136,7 +137,7 @@ export const FeedCard = ({ postId, content, nickname, likes, dislikes, comment }
             <Nickname>Enviado por: {nickname}</Nickname>
             <Content>{content}</Content>
             <FooterContainer>
-                <div style={{display:"flex", columnGap:"10px"}}>
+                <div style={{ display: "flex", columnGap: "10px" }}>
                     <LikesDislikesContainer>
                         <LikeDislikeImg
                             onClick={addLike}
@@ -157,11 +158,11 @@ export const FeedCard = ({ postId, content, nickname, likes, dislikes, comment }
                         <CountNumbers>{comment.length}</CountNumbers>
                     </CountCommentsConteiner>
                 </div>
-                
+
                 <div style={{ display: "flex", columnGap: "10px" }}>
                     {showButton()}
                 </div>
-            {editPost && <EditCard/>}
+                {editPost && <EditCard />}
             </FooterContainer>
         </FeedCardContainer>
     )

@@ -2,6 +2,7 @@ import { useState } from "react"
 import {globalContext} from "./globalContext"
 import axios from "axios"
 import { base_url, token_name } from "../constants/url"
+import { showToast } from "../components/Toast/Toast"
 
 export const GlobalState = ({children}) => {
     
@@ -11,7 +12,6 @@ export const GlobalState = ({children}) => {
     const [editPost, setEditPost] = useState(false)
     const [inputEdit, setInputEdit] = useState()
     const [idToEdit, setIdToEdit] = useState()
-    const [idToDelete, setIdToDelete] = useState()
 
     const loadingPosts = async () => {
         try {
@@ -23,8 +23,7 @@ export const GlobalState = ({children}) => {
             const res = await axios.get(base_url + "/posts", config)
             setPosts(res.data)
         } catch (error) {
-            console.error(error?.response?.data);
-            window.alert(error?.response?.data)
+            showToast({type: "warn", message: `${error?.response?.data}`})
         }
     }
     
@@ -40,8 +39,7 @@ export const GlobalState = ({children}) => {
             setComments(res.data)
             setLoading(false)
         } catch (error) {
-            console.error(error?.response?.data);
-            window.alert(error?.response?.data)
+            showToast({type: "warn", message: `${error?.response?.data}`})
         }
     }
     
@@ -57,8 +55,7 @@ export const GlobalState = ({children}) => {
             setComments(res.data)
             setLoading(false)
         } catch (error) {
-            console.error(error?.response?.data);
-            window.alert(error?.response?.data)
+            showToast({type: "warn", message: `${error?.response?.data}`})
         }
     }
 
