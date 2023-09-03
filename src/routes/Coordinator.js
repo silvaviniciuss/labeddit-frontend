@@ -10,3 +10,6 @@ export const goToCommentPage = (navigate, postId) => {
     navigate(`/comments/${postId}`);
 }
 
+export const goToSignupPage = (navigate) => {
+    navigate('/users/signup');
+}
