@@ -7,6 +7,7 @@ import { goToFeedPage } from "../../routes/Coordinator"
 import { useNavigate } from "react-router-dom"
 import { useContext, useState } from "react"
 import { globalContext } from "../../contexts/globalContext"
+import ToastAnimated, { showToast } from "../../components/Toast/Toast"
 
 export const Signup = () => {
     const { input, onChange } = useInput({ nickname: "", email: "", password: "" })
@@ -19,7 +20,7 @@ export const Signup = () => {
         setLoading(true)
         try {
             if (isChecked === false) {
-                window.alert("Deve ser macado")
+                showToast({type: "warn", message: "Você deve concordar com Contrato de usuário e Política de Privacidade"})
             } else {
                 const body = {
                     nickname: input.nickname,
@@ -33,7 +34,7 @@ export const Signup = () => {
                 goToFeedPage(navigate)
             }
         } catch (error) {
-            window.alert(error?.response?.data)
+            showToast({type: "warn", message: `${error?.response?.data}`})
         }
     }
 
@@ -97,6 +98,7 @@ export const Signup = () => {
                 </TermsContainer>
                 <ButtonGradient>Cadastrar</ButtonGradient>
             </FormSignupContainer>
+            <ToastAnimated/>
         </SignupPageContainer>
     )
 }

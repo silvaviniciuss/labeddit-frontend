@@ -8,6 +8,7 @@ import { Button, ButtonGradient, FormContainer, Input, InputContainer, InputsSpa
 import { Loading } from "../../components/Loading/Loading"
 import { useContext } from "react"
 import { globalContext } from "../../contexts/globalContext"
+import ToastAnimated, {showToast} from "../../components/Toast/Toast"
 
 export const Login = () => {
     const navigate = useNavigate()
@@ -29,7 +30,8 @@ export const Login = () => {
             goToFeedPage(navigate)
             setLoading(false)
         } catch (error) {
-            window.alert(error?.response?.data)
+            // window.alert(error?.response?.data)
+            showToast({type: "error", message: `${error?.response?.data}`})
             setLoading(false)
         }
     }
@@ -77,6 +79,7 @@ export const Login = () => {
                 onClick={() => goToSignupPage(navigate)}
             >Crie uma conta!</Button>
             {loading && <Loading />}
+            <ToastAnimated/>
         </LoginPageContaner>
     )
 }

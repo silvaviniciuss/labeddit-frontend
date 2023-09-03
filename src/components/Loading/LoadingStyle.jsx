@@ -27,4 +27,8 @@ export const LoadingText = styled.div`
             transform: rotate(1turn);
         }
     }
+    @media screen and (min-device-width : 1000){
+        left: 20%;
+    }
+
 `

@@ -1,4 +1,4 @@
-import { Content,DeleteContainer,DeleteIcon,EditContainer,EditIcon,FeedCardContainer, FooterContainer, LikeDislikeImg, LikesDislikesContainer, Nickname } from "../Feed/FeedCardStyle"
+import { Content, DeleteContainer, DeleteIcon, EditContainer, EditIcon, FeedCardContainer, FooterContainer, LikeDislikeImg, LikesDislikesContainer, Nickname } from "../Feed/FeedCardStyle"
 import { CountNumbers } from "../../pages/Feed/FeedStyle"
 import { useContext, useEffect, useState } from "react"
 import axios from "axios"
@@ -13,8 +13,8 @@ import { EditCardComment } from "../EditCard/EditCardComment"
 
 export const CommentsByPostId = ({ commentPostId }) => {
     const [likeCommentButton, setLikeCommentButton] = useState('none')
-    const {postId} = useParams()
-    const { loadingPostCommentsByPostId,setLoading,idToDelete, setIdToDelete,editPost, setEditPost, setInputEdit, setIdToEdit} = useContext(globalContext)
+    const { postId } = useParams()
+    const { loadingPostCommentsByPostId, setLoading, idToDelete, setIdToDelete, editPost, setEditPost, setInputEdit, setIdToEdit } = useContext(globalContext)
     const labedditNickname = window.localStorage.getItem("labeddit_nickname")
 
     useEffect(() => {
@@ -121,13 +121,14 @@ export const CommentsByPostId = ({ commentPostId }) => {
                     {
                         commentPostId.creator.nickname === labedditNickname &&
                         <>
-                            <EditContainer>
+                            <EditContainer
+                                onClick={() => {
+                                    setInputEdit(commentPostId.content)
+                                    setIdToEdit(commentPostId.id)
+                                    setEditPost(true)
+                                }}
+                            >
                                 <EditIcon
-                                    onClick={() => {
-                                        setInputEdit(commentPostId.content)
-                                        setIdToEdit(commentPostId.id)
-                                        setEditPost(true)
-                                    }}
                                     src={EditImg}
                                 />
                             </EditContainer>
@@ -140,7 +141,7 @@ export const CommentsByPostId = ({ commentPostId }) => {
                     }
                 </div>
             </FooterContainer>
-            {editPost && <EditCardComment/>}
+            {editPost && <EditCardComment />}
         </FeedCardContainer>
     )
 }
