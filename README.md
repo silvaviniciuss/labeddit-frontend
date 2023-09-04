@@ -63,7 +63,7 @@ O Labeddit foi pensado no modelo mobile-first - (projetos web onde o foco inicia
 
 ### Página de Login
 
-[!image](https://github.com/silvaviniciuss/labeddit-frontend/blob/main/src/assets/image/login.png)
+<img src="./src/assets/image/login.png">
 
 Necessário informar email e senha para entrar no LabEddit, caso alguma das informações não estiverem de acordar com o banco de dados irá retornar erro informando o ocorrido.
 
