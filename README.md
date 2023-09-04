@@ -91,14 +91,13 @@ Existe a opção de edição ou deleção de um comentário que só é visivel a
 
 ## 🛠 Tecnologias
 
-
 - [API](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)   
 - [React](https://react.dev/)
 - [React-Toastify](https://medium.com/@kimuradev/react-toastify-78f394cda71e)
-- [React Router](https://reactrouter.com/en/main)**
-- [React Context](https://legacy.reactjs.org/docs/context.html)**
-- [Styled-components](https://styled-components.com/)**
-- [Axios](https://axios-http.com/ptbr/docs/intro)**
-- [Estado Global](https://coderpad.io/blog/development/global-state-management-react/)**
+- [React Router](https://reactrouter.com/en/main)
+- [React Context](https://legacy.reactjs.org/docs/context.html)
+- [Styled-components](https://styled-components.com/)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [Estado Global](https://coderpad.io/blog/development/global-state-management-react/)
 
 ---
