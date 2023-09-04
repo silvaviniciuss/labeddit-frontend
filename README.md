@@ -63,27 +63,27 @@ O Labeddit foi pensado no modelo mobile-first - (projetos web onde o foco inicia
 
 ### Página de Login
 
-!image
+[!image](https://github.com/silvaviniciuss/labeddit-frontend/blob/main/src/assets/image/login.png)
 
 Necessário informar email e senha para entrar no LabEddit, caso alguma das informações não estiverem de acordar com o banco de dados irá retornar erro informando o ocorrido.
 
 ### Página de Signup
 
-!image
+[!image](https://github.com/silvaviniciuss/labeddit-frontend/blob/main/src/assets/image/signup.png)
 
 Informar apelido, um email válido e uma senha a sua escolha.
 Não é possível cadastrar um apelido ou email que ja existem. Um erro irá retornar informando o ocorrido.
 
 ### Página de Feed
 
-!image
+[!image](https://github.com/silvaviniciuss/labeddit-frontend/blob/main/src/assets/image/feed.png)
 
 Página resposável pela visualização de todos os posts do LabEddit, na mesma possibilita a interação para criar uma novo post ou navegar entre os existes e também deixar um like ou dislike e algum dos posts.
 Existe a opção de edição ou deleção de um post que só é visivel ao criador do mesmo.
 
 ### Página de Comments
 
-!image
+[!image](https://github.com/silvaviniciuss/labeddit-frontend/blob/main/src/assets/image/comments.png)
 
 Página responsável pela visualização dos comentários em um post. Também possibilida a interação para criar um novo comentário navegar entre os existes e deixar like ou dislikes nos comentários.
 Existe a opção de edição ou deleção de um comentário que só é visivel ao criador do mesmo.
