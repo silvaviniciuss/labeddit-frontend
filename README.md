@@ -14,6 +14,8 @@
 ---
 Link do deploy: https://labeddit-vinicius.surge.sh/
 
+Link do repositório do backend: https://github.com/silvaviniciuss/labeddit-backend
+
 ## ⚙️ Funcionalidades
 
   - [x] Signup - realização de cadastro ter acesso ao LabEddit.
