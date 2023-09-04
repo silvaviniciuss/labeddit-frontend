@@ -9,9 +9,10 @@
 
 ## 💻 Sobre o projeto 
 
-Labeddit é um projeto desenvolvido durante o **Bootcamp Web Full-Stack** da [Labenu](https://www.labenu.com.br/), de uma pequena rede social onde possibilita a iteração entre pessoas através de pequenas postagens, comentários em texto e reações de like(gostei) ou dislike (não gostei).
+[Labeddit](https://labeddit-vinicius.surge.sh/) é um projeto desenvolvido durante o **Bootcamp Web Full-Stack** da [Labenu](https://www.labenu.com.br/), de uma pequena rede social onde possibilita a iteração entre pessoas através de pequenas postagens, comentários em texto e reações de like(gostei) ou dislike (não gostei).
 
 ---
+Link do deploy: https://labeddit-vinicius.surge.sh/
 
 ## ⚙️ Funcionalidades
 
